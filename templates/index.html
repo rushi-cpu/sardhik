@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris KNN Predictor</title>
+</head>
+<body>
+    <h1>Iris Flower Predictor</h1>
+    <form method="post" action="/predict_web">
+        <label>Sepal Length:</label>
+        <input type="number" step="any" name="sepal_length" required><br><br>
+
+        <label>Sepal Width:</label>
+        <input type="number" step="any" name="sepal_width" required><br><br>
+
+        <label>Petal Length:</label>
+        <input type="number" step="any" name="petal_length" required><br><br>
+
+        <label>Petal Width:</label>
+        <input type="number" step="any" name="petal_width" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
